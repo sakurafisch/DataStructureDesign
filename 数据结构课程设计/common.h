@@ -13,12 +13,13 @@ namespace winnerwinter
 	public:
 		Person();
 		int getNumber();
-		void initCoordinate();
 		void printCoordinate();
 		int getx();
 		int gety();
 		void InitX_Aixs();
 		void InitY_Aixs();
+	private:
+		void initCoordinate();
 	private:
 		int number;
 		int x;
@@ -38,6 +39,8 @@ namespace winnerwinter
 		void onceConnectable();
 		void printAllPeopleCoordinate();
 	private:
+		double distance(int, int, int, int);
+	private:
 		Person person[maxnum];
 		double edge[maxnum][maxnum];
 		int edgeNum;
@@ -46,6 +49,5 @@ namespace winnerwinter
 		int prePerson[maxnum];
 		int adj[maxnum][maxnum];
 		void initMatrix();
-		double distance(int, int, int, int);
 	};
 }
