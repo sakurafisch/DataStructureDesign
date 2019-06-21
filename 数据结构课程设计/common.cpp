@@ -179,7 +179,7 @@ void AdjMatrix::shortestPath(){
 	}
 	std::cout << person[firstPersonIndex].getNumber() << "到" << person[secondPersonIndex].getNumber() << "的最短路径为：";
 	while (!myStack.empty()) {
-		std::cout << person[myStack.top()].getNumber() << "";
+		std::cout << person[myStack.top()].getNumber() << " ";
 		myStack.pop();
 	}
 	std::cout << std::endl;
@@ -235,6 +235,7 @@ void AdjMatrix::relativeConnectable()
 			std::cout << myQueue.front() << ' ';
 			myQueue.pop();
 		}
+		std::cout << std::endl;
 	}
 }
 
@@ -265,6 +266,7 @@ void AdjMatrix::onceConnectable()
 			std::cout << myQueue.front() << ' ';
 			myQueue.pop();
 		}
+		std::cout << std::endl;
 	}
 	std::cout << std::endl;
 }

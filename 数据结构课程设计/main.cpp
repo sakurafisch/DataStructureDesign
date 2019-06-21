@@ -22,11 +22,11 @@ LOOP:
 
 bool cycle(AdjMatrix adjMatrix) 
 {
+	adjMatrix.updateXY();
 	adjMatrix.printAdj();
 	adjMatrix.shortestPath();
 	adjMatrix.relativeConnectable();
 	adjMatrix.onceConnectable();
-	adjMatrix.updateXY();
 	std::cout << "输入\"exit\"退出，输入\"continue\"或其他内容继续" << std::endl;
 	std::string str;
 	std::cin >> str;
