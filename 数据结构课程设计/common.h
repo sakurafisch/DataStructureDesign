@@ -31,7 +31,7 @@ namespace winnerwinter
 		AdjMatrix();
 		void createMatrix();
 		int getEdgeNum();
-		void showAdj();
+		void printAdj();
 		void shortestPath();
 		void updateXY();
 		void relativeConnectable();

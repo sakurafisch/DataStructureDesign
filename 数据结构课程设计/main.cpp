@@ -6,7 +6,7 @@ int main()
 	AdjMatrix adjMatrix;
 	adjMatrix.createMatrix();
 	while (true) {
-		adjMatrix.showAdj(); 
+		adjMatrix.printAdj(); 
 		adjMatrix.shortestPath();
 		adjMatrix.relativeConnectable();
 		adjMatrix.onceConnectable();

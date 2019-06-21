@@ -74,16 +74,29 @@ void AdjMatrix::createMatrix() {
 	int personIndex1, personIndex2;
 	while (std::cin >> personIndex1 >> personIndex2) {
 		edge[personIndex1][personIndex2] = distance(person[personIndex1].getx(), person[personIndex1].gety(), person[personIndex2].getx(), person[personIndex2].gety());
+		edge[personIndex2][personIndex1] = edge[personIndex1][personIndex2];
 		edgeNum++;
 	}
 	std::cin.clear();
+
+	for (int i = 0; i < Person::static_number; i++) {
+		for (int j = 0; j < Person::static_number; j++) {
+			adj[i][j] = int(edge[i][j]);
+			adj[j][i] = int(edge[i][j]);
+		}
+	}
+	for (int i = 0; i < Person::static_number; i++)
+	{
+		adj[i][i] = 0;
+	}
+
 	// std::getchar(); // 吃掉最后一个字符
 }
 
 void AdjMatrix::initMatrix() {
 	for (int i = 0; i < maxnum; i++) {
 		for (int j = 0; j < maxnum; j++) {
-			edge[i][j] = 10000;
+			edge[i][j] = infinity;
 		}
 	}
 }
@@ -98,11 +111,14 @@ double AdjMatrix::distance(int x1, int y1, int x2, int y2) {
 	return sqrt(x * x + y * y);
 }
 
-void AdjMatrix::showAdj() {
+void AdjMatrix::printAdj() {
 	std::cout << "邻接矩阵为：" << std::endl;
 	for (int i = 0; i < maxnum; i++) {
 		for (int j = 0; j < maxnum; j++) {
-			std::cout << edge[i][j];
+			if (edge[i][j] != infinity)
+				std::cout << edge[i][j];
+			else
+				std::cout << "∞";
 			if (j != maxnum - 1) {
 				std::cout << '\t';
 			} else {
@@ -123,7 +139,7 @@ void AdjMatrix::shortestPath(){
 		int u = -1;
 		double min = infinity;
 		for (int j = 0; j < Person::static_number; j++) {
-			if (visited[j] == false && path[j] <= min) {
+			if (visited[j] == false && path[j] < min) {
 				u = j;
 				min = path[j];
 			}
