@@ -165,12 +165,12 @@ void AdjMatrix::shortestPath(){		// 最短路径
 	}
 	 for (int i = 0; i < Person::static_number; i++) {
 		 if (path[i] == infinity)
-			 std::cout << person[firstPersonIndex].getNumber() << "到" << person[i].getNumber() << "的最短距离为：∞" << std::endl;		// 换行
+			 std::cout << person[firstPersonIndex].getNumber() << "到" << person[i].getNumber() << "的最短距离为：∞" << std::endl;		// 输出信息并换行
 		 else
-			std::cout << person[firstPersonIndex].getNumber() << "到" << person[i].getNumber() << "的最短距离为：" << path[i] << std::endl;		// 换行
+			std::cout << person[firstPersonIndex].getNumber() << "到" << person[i].getNumber() << "的最短距离为：" << path[i] << std::endl;		// 输出信息并换行
 	 }
 	int secondPersonIndex;
-	std::cout << "请输入第二个人的序号：" << std::endl;		// 换行
+	std::cout << "请输入第二个人的序号：" << std::endl;		// 输出信息并换行
 	std::cin >> secondPersonIndex;
 	// secondPersonIndex--;      // 所有序号从1开始
 	std::stack <int> myStack;
@@ -223,7 +223,7 @@ void AdjMatrix::relativeConnectable()
 {
 	// 利用循环寻找附近范围能够联系到的人
 	std::cout << std::endl;		// 换行
-	std::cout << "请输入需要查找附近联系人的人的序号：" << std::endl;		// 换行
+	std::cout << "请输入需要查找附近联系人的人的序号：" << std::endl;		// 输出信息并换行
 	int find;
 	std::cin >> find;
 	std::queue<int> myQueue;
@@ -234,7 +234,7 @@ void AdjMatrix::relativeConnectable()
 		}
 	}
 	if (myQueue.empty()) {
-		std::cout << "这个人附近没有人。" << std:: endl;		// 换行
+		std::cout << "这个人附近没有人。" << std:: endl;		// 输出信息并换行
 	}
 	else {
 		std::cout << std::endl;		// 换行
@@ -251,7 +251,7 @@ void AdjMatrix::onceConnectable()
 {
 	// 利用循环寻找通过一次中间人可以联系到的人
 	std::cout << std::endl;		// 换行
-	std::cout << "请输入需要查找通过一次中间人可以联系到的人的人的序号：" << std::endl;		// 换行
+	std::cout << "请输入需要查找通过一次中间人可以联系到的人的人的序号：" << std::endl;		// 输出信息并换行
 	int find;		// 起始人的下标
 	std::cin >> find;		// 输入起始人的下标
 	std::queue<int> myQueue;	// 定义队列
