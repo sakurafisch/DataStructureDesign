@@ -270,3 +270,11 @@ void AdjMatrix::onceConnectable()
 	}
 	std::cout << std::endl;
 }
+
+void AdjMatrix::printAllPeopleCoordinate()
+{
+	for (int i = 0; i < Person::static_number; i++) {
+		person[i].printCoordinate();
+	}
+	std::cout << std::endl;
+}

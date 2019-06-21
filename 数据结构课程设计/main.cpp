@@ -23,6 +23,7 @@ LOOP:
 bool cycle(AdjMatrix adjMatrix) 
 {
 	adjMatrix.updateXY();
+	adjMatrix.printAllPeopleCoordinate();
 	adjMatrix.printAdj();
 	adjMatrix.shortestPath();
 	adjMatrix.relativeConnectable();

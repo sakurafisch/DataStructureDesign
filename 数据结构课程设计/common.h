@@ -36,6 +36,7 @@ namespace winnerwinter
 		void updateXY();
 		void relativeConnectable();
 		void onceConnectable();
+		void printAllPeopleCoordinate();
 	private:
 		Person person[maxnum];
 		double edge[maxnum][maxnum];
